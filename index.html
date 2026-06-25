@@ -961,7 +961,7 @@
           <div class="contact-icon">✉️</div>
           <div class="contact-item-text">
             <span class="contact-item-label">Email</span>
-            <a href="mailto:flickmatch@axisapptech.com" class="contact-item-value">flickmatch@axisapptech.com</a>
+            <a href="mailto:hello@axisapptech.com" class="contact-item-value">hello@axisapptech.com</a>
           </div>
         </div>
         <div class="contact-item">
@@ -1002,80 +1002,28 @@
 </div>
 <!-- END MAIN CONTENT -->
 
-<!-- PRIVACY POLICY PAGE -->
-<div class="privacy-page" id="privacy-page">
-  <span class="back-link" onclick="showMain()">← Back to Axis App Tech</span>
-  <h1>Privacy Policy</h1>
-  <p class="privacy-date">Effective Date: June 20, 2025 &nbsp;|&nbsp; Last Updated: June 20, 2025</p>
-
-  <p>Axis App Tech LLC ("Axis App Tech," "we," "our," or "us") is committed to protecting your privacy. This Privacy Policy describes how we collect, use, and handle information when you visit our website at axisapptech.com or use our mobile applications, including Flick Match.</p>
-
-  <h2>1. Information We Collect</h2>
-  <p>We may collect the following types of information:</p>
-  <ul>
-    <li><strong>Contact information</strong> you provide voluntarily, such as your name and email address when you contact us through our website.</li>
-    <li><strong>Usage data</strong> collected automatically when you use our applications, such as device type, operating system version, and app interaction data.</li>
-    <li><strong>Communications</strong> you send us, such as emails or support requests.</li>
-  </ul>
-
-  <h2>2. How We Use Your Information</h2>
-  <p>We use the information we collect to:</p>
-  <ul>
-    <li>Respond to your inquiries and provide customer support</li>
-    <li>Improve our products and services</li>
-    <li>Send you important updates about our apps (only where you have opted in)</li>
-    <li>Comply with legal obligations</li>
-  </ul>
-
-  <h2>3. Information Sharing</h2>
-  <p>We do not sell, rent, or share your personal information with third parties for their marketing purposes. We may share information with trusted service providers who assist us in operating our website and applications, subject to confidentiality agreements.</p>
-
-  <h2>4. Data Security</h2>
-  <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
-
-  <h2>5. Your Rights</h2>
-  <p>Depending on your location, you may have rights to access, correct, or delete your personal information. To exercise these rights, contact us at <a href="mailto:flickmatch@axisapptech.com" style="color: var(--accent);">flickmatch@axisapptech.com</a>.</p>
-
-  <h2>6. Children's Privacy</h2>
-  <p>Our services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
-
-  <h2>7. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page with an updated effective date.</p>
-
-  <h2>8. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy, please contact us at:<br />
-  <strong>Axis App Tech LLC</strong><br />
-  Email: <a href="mailto:flickmatch@axisapptech.com" style="color: var(--accent);">flickmatch@axisapptech.com</a><br />
-  Website: axisapptech.com</p>
-</div>
-
 <!-- FOOTER -->
 <footer>
   <a href="#" class="footer-logo" onclick="showMain()">Axis<span>.</span>App Tech</a>
-  <span class="footer-copy">© 2025 Axis App Tech LLC. All rights reserved.</span>
+  <span class="footer-copy">© 2026 Axis App Tech LLC. All rights reserved.</span>
   <div class="footer-links">
-    <a href="#" onclick="showPrivacy()">Privacy Policy</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="delete-account.html">Delete Account</a>
     <a href="#contact">Contact</a>
   </div>
 </footer>
 
 <script>
-  function showPrivacy() {
-    document.querySelector('.main-content').classList.add('hidden');
-    document.getElementById('privacy-page').classList.add('active');
-    window.scrollTo(0, 0);
-  }
+  // Logo links call showMain() to return to the top of the page.
+  function showMain() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-  function showMain() {
-    document.querySelector('.main-content').classList.remove('hidden');
-    document.getElementById('privacy-page').classList.remove('active');
-    window.scrollTo(0, 0);
-  }
-
-  // Smooth scroll for nav links
+  // Smooth scroll for in-page nav links.
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      if (href === '#') return; // logo / back-to-top, handled by showMain()
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
